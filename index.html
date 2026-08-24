@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Burger House</title>
+
+    <style>
+        body {
+            background: #111;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 30px 15px;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            margin-top: 50px;
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .produto {
+            background: #222;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 15px;
+            max-width: 400px;
+        }
+
+        .produto img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .produto h3 {
+            font-size: 24px;
+        }
+
+        .produto p {
+            font-size: 16px;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        .produto strong {
+            font-size: 22px;
+        }
+
+        .sobre,
+        .informacoes {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 25px;
+            background: #222;
+            border-radius: 15px;
+        }
+
+        .sobre p,
+        .informacoes p {
+            line-height: 1.6;
+        }
+
+        footer {
+            margin-top: 70px;
+            padding: 30px 20px;
+            background: #000;
+            border-top: 1px solid #333;
+        }
+
+        footer h3 {
+            font-size: 22px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .produto {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .produto img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>BURGER HOUSE 🍔</h1>
+
+    <p>O melhor hambúrguer da região!</p>
+
+    <a class="botao"
+       href="https://wa.me/5561995840815?text=Olá!%20Quero%20fazer%20um%20pedido."
+       target="_blank">
+        Pedir pelo WhatsApp
+    </a>
+
+    <h2>🍔 Nosso Cardápio</h2>
+
+    <div class="produto">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80">
+
+        <h3>X-Bacon</h3>
+
+        <p>
+            Pão, carne, queijo, bacon e molho especial.
+        </p>
+
+        <strong>R$ 25,00</strong>
+    </div>
+
+    <div class="produto">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80">
+
+        <h3>X-Salada</h3>
+
+        <p>
+            Pão, carne, queijo, alface, tomate e molho especial.
+        </p>
+
+        <strong>R$ 22,00</strong>
+    </div>
+
+    <div class="produto">
+        <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=600&q=80">
+
+        <h3>Combo Burger</h3>
+
+        <p>
+            Hambúrguer + batata + refrigerante.
+        </p>
+
+        <strong>R$ 32,00</strong>
+    </div>
+
+    <section class="sobre">
+
+        <h2>Sobre a Burger House</h2>
+
+        <p>
+            Somos uma hamburgueria apaixonada por criar
+            hambúrgueres artesanais, saborosos e preparados
+            com ingredientes de qualidade.
+        </p>
+
+        <p>
+            Nosso objetivo é entregar uma experiência incrível
+            em cada pedido.
+        </p>
+
+    </section>
+
+    <section class="informacoes">
+
+        <h2>📍 Informações</h2>
+
+        <p>📍 Recanto das Emas - Brasília</p>
+
+        <p>🕐 Segunda a Domingo — 18h às 23h</p>
+
+        <p>📲 Pedidos pelo WhatsApp</p>
+
+    </section>
+
+    <footer>
+
+        <h3>BURGER HOUSE 🍔</h3>
+
+        <p>
+            Hambúrguer artesanal feito com carinho.
+        </p>
+
+        <p>
+            © 2026 Burger House
+        </p>
+
+    </footer>
+
+</body>
+</html>
