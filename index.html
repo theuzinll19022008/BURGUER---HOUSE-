@@ -1,213 +1,800 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Burger House</title>
+<title>Burger House</title>
 
-    <style>
-        body {
-            background: #111;
-            color: white;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            padding: 30px 15px;
-            margin: 0;
-        }
+<style>
 
-        h1 {
-            font-size: 40px;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        h2 {
-            margin-top: 50px;
-            font-size: 30px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0b0b;
+    color: #fff;
+}
 
-        p {
-            font-size: 18px;
-        }
+/* TOPO */
 
-        .botao {
-            display: inline-block;
-            background: #25D366;
-            color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-size: 18px;
-            margin: 20px 0;
-        }
+header {
+    padding: 20px;
+    text-align: center;
+    background: #111;
+    border-bottom: 1px solid #292929;
+}
 
-        .produto {
-            background: #222;
-            padding: 20px;
-            margin: 20px auto;
-            border-radius: 15px;
-            max-width: 400px;
-        }
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
 
-        .produto img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
+.logo span {
+    color: #ffb000;
+}
 
-        .produto h3 {
-            font-size: 24px;
-        }
+/* HERO */
 
-        .produto p {
-            font-size: 16px;
-            color: #ccc;
-            line-height: 1.5;
-        }
+.hero {
+    padding: 70px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #171717, #0b0b0b);
+}
 
-        .produto strong {
-            font-size: 22px;
-        }
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
 
-        .sobre,
-        .informacoes {
-            max-width: 600px;
-            margin: 60px auto;
-            padding: 25px;
-            background: #222;
-            border-radius: 15px;
-        }
+.hero h1 span {
+    color: #ffb000;
+}
 
-        .sobre p,
-        .informacoes p {
-            line-height: 1.6;
-        }
+.hero p {
+    color: #cfcfcf;
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+}
 
-        footer {
-            margin-top: 70px;
-            padding: 30px 20px;
-            background: #000;
-            border-top: 1px solid #333;
-        }
+.botao {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 28px;
+    background: #ffb000;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+}
 
-        footer h3 {
-            font-size: 22px;
-        }
+/* CATEGORIAS */
 
-        footer p {
-            font-size: 14px;
-            color: #aaa;
-        }
+.categorias {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 32px;
-            }
+.categorias button {
+    border: 1px solid #333;
+    background: #181818;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 30px;
+    white-space: nowrap;
+}
 
-            .produto {
-                width: 100%;
-                box-sizing: border-box;
-            }
+/* CARDÁPIO */
 
-            .produto img {
-                height: 180px;
-            }
-        }
-    </style>
+.cardapio {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo h2 {
+    font-size: 32px;
+}
+
+.titulo p {
+    color: #aaa;
+    margin-top: 8px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.produto {
+    background: #171717;
+    border: 1px solid #292929;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+}
+
+.foto {
+    height: 210px;
+    background: #252525;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-size: 45px;
+}
+
+.conteudo {
+    padding: 20px;
+}
+
+.conteudo h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.conteudo p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 45px;
+}
+
+.preco {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.preco strong {
+    font-size: 20px;
+    color: #ffb000;
+}
+
+.pedir {
+    background: #ffb000;
+    color: #111;
+    padding: 9px 13px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* MAIS VENDIDO */
+
+.destaque {
+    border: 2px solid #ffb000;
+}
+
+.tag {
+    background: #ffb000;
+    color: #111;
+    text-align: center;
+    padding: 7px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* AVALIAÇÕES */
+
+.avaliacoes {
+    background: #111;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.avaliacoes h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.avaliacoes-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.avaliacao {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.estrelas {
+    color: #ffb000;
+    margin-bottom: 12px;
+}
+
+.avaliacao p {
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.avaliacao strong {
+    display: block;
+    margin-top: 15px;
+}
+
+/* INFORMAÇÕES */
+
+.info {
+    max-width: 900px;
+    margin: auto;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.info-box {
+    background: #171717;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.info-box h3 {
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: #aaa;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 35px 20px;
+    border-top: 1px solid #222;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .avaliacoes-container {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <h1>BURGER HOUSE 🍔</h1>
+<header>
 
-    <p>O melhor hambúrguer da região!</p>
+    <div class="logo">
+        BURGER <span>HOUSE 🍔</span>
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>
+        O sabor que merece seu <span>pedido.</span>
+    </h1>
+
+    <p>
+        Hambúrgueres artesanais, combos incríveis
+        e aquele sabor que dá vontade de pedir de novo.
+    </p>
 
     <a class="botao"
-       href="https://wa.me/5561995840815?text=Olá!%20Quero%20fazer%20um%20pedido."
+       href="https://wa.me/5561999999999?text=Olá!%20Quero%20fazer%20um%20pedido."
        target="_blank">
-        Pedir pelo WhatsApp
+        PEDIR AGORA 🍔
     </a>
 
-    <h2>🍔 Nosso Cardápio</h2>
+</section>
 
-    <div class="produto">
-        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80">
 
-        <h3>X-Bacon</h3>
+<div class="categorias">
+
+    <button>🍔 Hambúrgueres</button>
+    <button>🍟 Combos</button>
+    <button>🧀 Porções</button>
+    <button>🥤 Bebidas</button>
+
+</div>
+
+
+<section class="cardapio">
+
+    <div class="titulo">
+
+        <h2>Nosso Cardápio</h2>
 
         <p>
-            Pão, carne, queijo, bacon e molho especial.
+            Escolha seu favorito e faça seu pedido.
         </p>
 
-        <strong>R$ 25,00</strong>
     </div>
 
-    <div class="produto">
-        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80">
 
-        <h3>X-Salada</h3>
+    <div class="grid">
 
-        <p>
-            Pão, carne, queijo, alface, tomate e molho especial.
-        </p>
 
-        <strong>R$ 22,00</strong>
+        <div class="produto">
+
+            <div class="foto">
+                🍔
+            </div>
+
+            <div class="conteudo">
+
+                <h3>X-Bacon</h3>
+
+                <p>
+                    Hambúrguer artesanal, queijo,
+                    bacon crocante e molho especial.
+                </p>
+
+                <div class="preco">
+
+                    <strong>R$ 25,00</strong>
+
+                    <a class="pedir"
+                       href="https://wa.me/5561999999999?text=Olá!%20Quero%20pedir%20um%20X-Bacon."
+                       target="_blank">
+                        Pedir
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="produto">
+
+            <div class="foto">
+                🍔
+            </div>
+
+            <div class="conteudo">
+
+                <h3>X-Salada</h3>
+
+                <p>
+                    Carne artesanal, queijo, alface,
+                    tomate e molho especial.
+                </p>
+
+                <div class="preco">
+
+                    <strong>R$ 22,00</strong>
+
+                    <a class="pedir"
+                       href="https://wa.me/5561999999999?text=Olá!%20Quero%20pedir%20um%20X-Salada."
+                       target="_blank">
+                        Pedir
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="produto destaque">
+
+            <div class="tag">
+                ⭐ MAIS VENDIDO
+            </div>
+
+            <div class="foto">
+                🍔🍟🥤
+            </div>
+
+            <div class="conteudo">
+
+                <h3>Combo Burger</h3>
+
+                <p>
+                    Hambúrguer artesanal + batata frita
+                    + refrigerante.
+                </p>
+
+                <div class="preco">
+
+                    <strong>R$ 32,00</strong>
+
+                    <a class="pedir"
+                       href="https://wa.me/5561999999999?text=Olá!%20Quero%20pedir%20um%20Combo%20Burger."
+                       target="_blank">
+                        Pedir
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="produto">
+
+            <div class="foto">
+                🍔
+            </div>
+
+            <div class="conteudo">
+
+                <h3>Duplo Bacon</h3>
+
+                <p>
+                    Dois hambúrgueres, queijo duplo,
+                    bacon e molho da casa.
+                </p>
+
+                <div class="preco">
+
+                    <strong>R$ 34,00</strong>
+
+                    <a class="pedir"
+                       href="https://wa.me/5561999999999?text=Olá!%20Quero%20pedir%20um%20Duplo%20Bacon."
+                       target="_blank">
+                        Pedir
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="produto">
+
+            <div class="foto">
+                🍔
+            </div>
+
+            <div class="conteudo">
+
+                <h3>Smash Burger</h3>
+
+                <p>
+                    Carne smash, queijo derretido,
+                    cebola e molho especial.
+                </p>
+
+                <div class="preco">
+
+                    <strong>R$ 27,00</strong>
+
+                    <a class="pedir"
+                       href="https://wa.me/5561999999999?text=Olá!%20Quero%20pedir%20um%20Smash%20Burger."
+                       target="_blank">
+                        Pedir
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="produto">
+
+            <div class="foto">
+                🍟
+            </div>
+
+            <div class="conteudo">
+
+                <h3>Batata Cheddar & Bacon</h3>
+
+                <p>
+                    Batata crocante, cheddar cremoso
+                    e bacon crocante.
+                </p>
+
+                <div class="preco">
+
+                    <strong>R$ 22,00</strong>
+
+                    <a class="pedir"
+                       href="https://wa.me/5561999999999?text=Olá!%20Quero%20pedir%20Batata%20Cheddar%20e%20Bacon."
+                       target="_blank">
+                        Pedir
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="produto">
+
+            <div class="foto">
+                🍗
+            </div>
+
+            <div class="conteudo">
+
+                <h3>Nuggets</h3>
+
+                <p>
+                    Porção de nuggets crocantes
+                    acompanhados de molho especial.
+                </p>
+
+                <div class="preco">
+
+                    <strong>R$ 18,00</strong>
+
+                    <a class="pedir"
+                       href="https://wa.me/5561999999999?text=Olá!%20Quero%20pedir%20Nuggets."
+                       target="_blank">
+                        Pedir
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="produto">
+
+            <div class="foto">
+                🥤
+            </div>
+
+            <div class="conteudo">
+
+                <h3>Refrigerante</h3>
+
+                <p>
+                    Refrigerante gelado para
+                    acompanhar seu pedido.
+                </p>
+
+                <div class="preco">
+
+                    <strong>R$ 7,00</strong>
+
+                    <a class="pedir"
+                       href="https://wa.me/5561999999999?text=Olá!%20Quero%20pedir%20um%20Refrigerante."
+                       target="_blank">
+                        Pedir
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="produto">
+
+            <div class="foto">
+                🥤
+            </div>
+
+            <div class="conteudo">
+
+                <h3>Milk-shake</h3>
+
+                <p>
+                    Milk-shake cremoso e gelado
+                    nos sabores da casa.
+                </p>
+
+                <div class="preco">
+
+                    <strong>R$ 15,00</strong>
+
+                    <a class="pedir"
+                       href="https://wa.me/5561999999999?text=Olá!%20Quero%20pedir%20um%20Milk-shake."
+                       target="_blank">
+                        Pedir
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
     </div>
 
-    <div class="produto">
-        <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=600&q=80">
+</section>
 
-        <h3>Combo Burger</h3>
 
-        <p>
-            Hambúrguer + batata + refrigerante.
-        </p>
+<section class="avaliacoes">
 
-        <strong>R$ 32,00</strong>
+    <h2>O que nossos clientes dizem ⭐</h2>
+
+    <div class="avaliacoes-container">
+
+
+        <div class="avaliacao">
+
+            <div class="estrelas">
+                ★★★★★
+            </div>
+
+            <p>
+                "Hambúrguer muito saboroso e chegou
+                super rápido. Com certeza vou pedir novamente!"
+            </p>
+
+            <strong>— Lucas</strong>
+
+        </div>
+
+
+        <div class="avaliacao">
+
+            <div class="estrelas">
+                ★★★★★
+            </div>
+
+            <p>
+                "O combo é perfeito. A batata chegou
+                crocante e o hambúrguer estava incrível."
+            </p>
+
+            <strong>— Mariana</strong>
+
+        </div>
+
+
+        <div class="avaliacao">
+
+            <div class="estrelas">
+                ★★★★★
+            </div>
+
+            <p>
+                "Virou minha hamburgueria favorita.
+                Atendimento excelente!"
+            </p>
+
+            <strong>— Rafael</strong>
+
+        </div>
+
+
     </div>
 
-    <section class="sobre">
+</section>
 
-        <h2>Sobre a Burger House</h2>
 
-        <p>
-            Somos uma hamburgueria apaixonada por criar
-            hambúrgueres artesanais, saborosos e preparados
-            com ingredientes de qualidade.
-        </p>
+<section class="info">
 
-        <p>
-            Nosso objetivo é entregar uma experiência incrível
-            em cada pedido.
-        </p>
+    <h2>Venha conhecer a Burger House 🍔</h2>
 
-    </section>
+    <div class="info-grid">
 
-    <section class="informacoes">
 
-        <h2>📍 Informações</h2>
+        <div class="info-box">
 
-        <p>📍 Recanto das Emas - Brasília</p>
+            <h3>📍 Localização</h3>
 
-        <p>🕐 Segunda a Domingo — 18h às 23h</p>
+            <p>
+                Recanto das Emas<br>
+                Brasília - DF
+            </p>
 
-        <p>📲 Pedidos pelo WhatsApp</p>
+        </div>
 
-    </section>
 
-    <footer>
+        <div class="info-box">
 
-        <h3>BURGER HOUSE 🍔</h3>
+            <h3>🕐 Horário</h3>
 
-        <p>
-            Hambúrguer artesanal feito com carinho.
-        </p>
+            <p>
+                Segunda a Domingo<br>
+                18h às 23h
+            </p>
 
-        <p>
-            © 2026 Burger House
-        </p>
+        </div>
 
-    </footer>
+
+        <div class="info-box">
+
+            <h3>📲 Pedidos</h3>
+
+            <p>
+                Faça seu pedido
+                diretamente pelo WhatsApp.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>
+        BURGER HOUSE 🍔
+    </h3>
+
+    <p>
+        O sabor que merece seu pedido.
+    </p>
+
+    <p>
+        © 2026 Burger House
+    </p>
+
+</footer>
+
 
 </body>
 </html>
